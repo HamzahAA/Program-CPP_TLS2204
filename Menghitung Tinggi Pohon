@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cmath>  
+
+using namespace std;
+
+
+double hitungTinggiPohon(double jarakHorizontal, double sudutElevasi) {
+    double sudutElevasiRadian = sudutElevasi * (M_PI / 180.0);
+    
+    double tinggiPohon = jarakHorizontal * tan(sudutElevasiRadian);
+    
+    return tinggiPohon;
+}
+
+int main() {
+    double jarakHorizontal, sudutElevasi;
+    
+    cout << "Masukkan jarak horizontal dari pengamat ke dasar pohon (dalam meter): ";
+    cin >> jarakHorizontal;
+    
+    cout << "Masukkan sudut elevasi dari pengamat ke puncak pohon (dalam derajat): ";
+    cin >> sudutElevasi;
+    
+    double tinggiPohon = hitungTinggiPohon(jarakHorizontal, sudutElevasi);
+    
+    cout << "Tinggi pohon adalah: " << tinggiPohon << " meter" << endl;
+    
+    return 0;
+}
